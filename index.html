@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gestor de correo personal</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: una sola columna de lectura, dos secciones (inicio y privacidad) */
+:root{
+  --bg:#f6f7f5; --surface:#ffffff; --fg:#1d2420; --muted:#55615a; --rule:#d9ded9; --accent:#2f5d48;
+  --display:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --body:"Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141917; --surface:#1b211e; --fg:#e6ebe7; --muted:#a3ada7; --rule:#2e3631; --accent:#8cc4a8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141917; --surface:#1b211e; --fg:#e6ebe7; --muted:#a3ada7; --rule:#2e3631; --accent:#8cc4a8; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+main{max-width:640px;margin:0 auto;padding-block:48px 64px;display:flex;flex-direction:column;gap:40px}
+header{display:flex;flex-direction:column;gap:8px}
+.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1,h2{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;line-height:1.2}
+h1{font-size:2.1rem}
+h2{font-size:1.4rem}
+p,ul{margin:0}
+section{display:flex;flex-direction:column;gap:14px;padding-top:28px;border-top:1px solid var(--rule)}
+ul{padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+nav{display:flex;gap:18px;flex-wrap:wrap;font-size:15px}
+.note{color:var(--muted);font-size:15px}
+code{font-size:.92em;background:var(--surface);border:1px solid var(--rule);padding:1px 5px;border-radius:4px;word-break:break-all}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <span class="eyebrow">Herramienta de uso personal</span>
+    <h1>Gestor de correo personal</h1>
+    <p>Utilidad privada que automatiza el envío periódico de documentación administrativa de su titular, desde su propia cuenta de Gmail.</p>
+    <nav><a href="#inicio">Qué hace</a><a href="#privacidad">Política de privacidad</a><a href="#condiciones">Condiciones de uso</a></nav>
+  </header>
+
+  <section id="inicio">
+    <h2>Qué hace</h2>
+    <p>De forma periódica, la herramienta:</p>
+    <ul>
+      <li>Prepara un documento PDF con la fecha actualizada y lo envía por correo a un destinatario fijo.</li>
+      <li>Cuando recibe la respuesta, separa las páginas del documento y remite cada una a su destinatario correspondiente.</li>
+      <li>Archiva todos los correos del proceso bajo una etiqueta propia en Gmail.</li>
+    </ul>
+    <p class="note">No es un servicio abierto al público. Solo la utiliza su titular, con su propia cuenta.</p>
+  </section>
+
+  <section id="privacidad">
+    <h2>Política de privacidad</h2>
+    <p>Esta herramienta accede a la cuenta de Gmail de su titular con el permiso <code>gmail.modify</code>, concedido por él mismo a través de Google, y únicamente para:</p>
+    <ul>
+      <li>Buscar y leer los correos relacionados con ese proceso y descargar sus adjuntos.</li>
+      <li>Redactar y enviar los correos del proceso a los destinatarios indicados por el titular.</li>
+      <li>Aplicar una etiqueta para archivar esos correos.</li>
+    </ul>
+    <p>No se recogen datos de otras personas, no se venden ni se ceden a terceros, no se usan con fines publicitarios y no se transfieren fuera de lo necesario para enviar cada correo. Las credenciales de acceso se guardan bajo control del titular.</p>
+    <p>El uso de la información recibida de las API de Google se ajusta a la Política de datos de usuario de los servicios de API de Google, incluidos los requisitos de uso limitado.</p>
+    <p>El acceso puede retirarse en cualquier momento desde la sección de seguridad de la cuenta de Google, en "Aplicaciones de terceros con acceso a la cuenta".</p>
+    <p class="note">Contacto: a través del correo de asistencia indicado en la pantalla de autorización de Google.</p>
+  </section>
+
+  <section id="condiciones">
+    <h2>Condiciones de uso</h2>
+    <p>Herramienta de uso exclusivamente personal, sin garantías ni servicio a terceros. Su titular es responsable del contenido de los correos que envía.</p>
+  </section>
+</main>
+</body>
+</html>
